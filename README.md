@@ -6,6 +6,10 @@ A small clone of youtube using React
 
 **API key:** [Google API Console](https://console.developers.google.com/)
 
+## Demo
+
+**Video Demo:** [Youtube](https://youtu.be/jPZwT__emy0)
+
 ## What I learned
 
 - Work a little with the youtube API
