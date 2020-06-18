@@ -24,7 +24,7 @@ class App extends Component {
   }
 
   searchOnYoutube = (searchQ) => {
-    const url = `https://www.googleapis.com/youtube/v3/search?part=snippet`
+    const url = `https://www.googleapis.com/youtube/v3/search`
 
     axios({
       url: url,
