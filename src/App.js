@@ -30,7 +30,7 @@ class App extends Component {
       url: url,
       method: "GET",
       params: {
-        part: "snippets",
+        part: "snippet",
         maxResults: 10,
         key: apiKey,
         q: searchQ
