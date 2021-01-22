@@ -1,49 +1,27 @@
-import React, { Component } from 'react';
-import {
-  FormControl,
-  InputLabel,
-  Input,
-  Card,
-  CardContent,
-} from '@material-ui/core';
+import { useState } from "react";
+import { FormControl, InputLabel, Input, Card, CardContent } from "@material-ui/core";
 
-export default class SearchArea extends Component {
-  constructor() {
-    super();
+const SearchArea = ({ searchOnYoutube }) => {
+  const [searchValue, setSearchValue] = useState("");
 
-    this.state = {
-      searchValue: '',
-    };
-  }
-
-  handleValue = (e) => {
-    this.setState({
-      searchValue: e.target.value,
-    });
-  };
-
-  onSubmit = (e) => {
+  function onSubmit(e) {
     e.preventDefault();
 
-    const { searchValue } = this.state;
-    this.props.searchOnYoutube(searchValue);
-  };
-
-  render() {
-    return (
-      <Card>
-        <CardContent>
-          <form className='search-area' onSubmit={this.onSubmit}>
-            <FormControl fullWidth>
-              <InputLabel>Enter Search Query</InputLabel>
-              <Input
-                value={this.state.searchValue}
-                onChange={this.handleValue}
-              />
-            </FormControl>
-          </form>
-        </CardContent>
-      </Card>
-    );
+    searchOnYoutube(searchValue);
   }
-}
+
+  return (
+    <Card>
+      <CardContent>
+        <form className="search-area" onSubmit={onSubmit}>
+          <FormControl fullWidth>
+            <InputLabel>Enter Search Query</InputLabel>
+            <Input value={searchValue} onChange={(e) => setSearchValue(e.currentTarget.value)} />
+          </FormControl>
+        </form>
+      </CardContent>
+    </Card>
+  );
+};
+
+export default SearchArea;
